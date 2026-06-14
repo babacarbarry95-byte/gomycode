@@ -15,7 +15,7 @@
         <div class="brand">
           <span class="logo">GOMYCODE</span>
         </div>
-        <nav class="nav-links">
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary Navigation">
           <a href="#">Nos formations</a>
           <a href="#">Hackerspaces</a>
           <a href="#">GMC School of Technology</a>
@@ -29,6 +29,11 @@
             SN
           </button>
         </div>
+        <button class="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </header>
 
       <main class="hero">
@@ -207,6 +212,16 @@
           </div>
         </div>
       </section>
+      <script>
+        const burgerButton = document.querySelector('.burger-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if (burgerButton && navLinks) {
+          burgerButton.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            burgerButton.setAttribute('aria-expanded', String(isOpen));
+          });
+        }
+      </script>
       <!-- Enrollment / Contact Form -->
       <section class="enroll-section">
         <div class="enroll-shell">
@@ -247,6 +262,45 @@
         </div>
       </section>
 
+      <footer class="site-footer">
+        <div class="footer-shell">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <span class="footer-logo">GOMYCODE</span>
+              <p>Éducation tech et IA en Afrique, avec des parcours flexibles pour les apprenants ambitieux.</p>
+            </div>
+
+            <div class="footer-links">
+              <h3>Explore</h3>
+              <a href="#">Nos formations</a>
+              <a href="#">Hackerspaces</a>
+              <a href="#">AI School</a>
+              <a href="#">GMC School of Technology</a>
+            </div>
+
+            <div class="footer-contact">
+              <h3>Contact</h3>
+              <p>Téléphone: <a href="tel:+221775263859">+221 77 526 38 59</a></p>
+              <p>Email: <a href="mailto:contact@gomycode.com">contact@gomycode.com</a></p>
+              <p>Senegal · Afrique</p>
+            </div>
+
+            <div class="footer-legal">
+              <h3>À propos</h3>
+              <p>Rejoins notre communauté d'apprenants et construis ta carrière avec les meilleurs outils d'IA et de technologie.</p>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>© 2026 GOMYCODE. Tous droits réservés.</p>
+            <div class="social-links">
+              <a href="#">Facebook</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </footer>
      
     </div>
   </body>
